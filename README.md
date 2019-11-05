@@ -5,8 +5,4 @@ This project mainly focused on showing similiar movies data using web scrapper f
 
 Application flow chart:
 
-```mermaid
-graph LR
-A[IMDB Dataset] -- Server Request  --> B(Laravel PHP)
-B -- JSON  --> C(Angular 8)
-```
+IMDB Dataset -- Server Request  --> (Laravel PHP API) -- JSON  --> C(Angular 8)
