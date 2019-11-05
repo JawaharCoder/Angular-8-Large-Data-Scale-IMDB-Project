@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-12">
+        <!-- <h4 class="d-inline">Card with Image  code icon</h4> -->
+        <!-- Row -->
+        <br/>
+        <ngx-ui-loader></ngx-ui-loader>
+        <div class="row">
+            <div class="col-12 m-t-30">
+                <h4 class="m-b-0" style="font-weight: bold; font-size: 40px;">{{movieDetailsObj?.name}}</h4>
+                
+
+                <div class="row">
+                    <div class="col-2 m-t-30">
+                            <img src="{{movieDetailsObj?.image}}" style="height:310px; width:200px; cursor: pointer;" alt="{{movieDetailsObj?.name}}" />
+                    </div>
+                    <div class="col-10 m-t-30">
+                            <p class="m-t-0 font-16">{{movieDetailsObj?.description}}</p>
+                            <p class="m-t-0 font-14">Genre: {{movieDetailsObj?.genre}}</p>
+                            <p class="m-t-0 font-14">Duration: {{movieDetailsObj?.duration}}</p>
+                            <p class="m-t-0 font-14">Keywords: {{movieDetailsObj?.keywords}}</p>
+                            <p class="m-t-0 font-14">Director: {{movieDetailsObj?.director?.name}}</p>
+                            <p class="m-t-0 font-14">Actor: 
+                                <span *ngFor="let actor of movieDetailsObj?.actor"> {{actor?.name}}, </span>
+                            </p>
+                            <p class="m-t-0 font-14">Review: {{movieDetailsObj?.review?.name}}</p>
+                            <p class="m-t-0 font-14">Rating: {{movieDetailsObj?.review?.reviewRating?.ratingValue}} /{{movieDetailsObj?.review?.reviewRating?.bestRating}}</p>
+                    </div>
+                </div>
+                
+
+                <!-- Card -->
+                <br/><br/><br/>
+                <div class="card">
+                    <div class="card-header" style="background: black; color: white; font-weight: bold;">
+                        Similiar Movie Like This :-
+                    </div>
+                    <div class="card-body">
+                            <div class="row">
+                                    <!-- column -->
+                                    <div class="col-lg-3 col-md-6" *ngFor="let movie of movieDetailsObj?.similiarmovie">
+                                        <!-- Card -->
+                                        <div style="padding-bottom:5px;" (click)="fetchMovieDetails(movie.tconst)">
+                                                <img class="card-img-top" (click)="fetchMovieDetails(movie.tconst)" src="{{movie.image}}" style="height:200px; width: 200px; cursor: pointer;" alt="{{movie.title}}">
+                                                <div style="width: 200px; height: 80px; background: black;color: white; padding: 5px; text-align: center;">
+                                                    <span class="card-title">{{movie.title}}</span>
+                                                    <!-- <p class="card-text">{{movie.originalTitle}}</p> -->
+                                                    <!-- <a [routerLink]="['/moviedetails']" [queryParams]="{RAW: movie.tconst}" class="btn btn-primary">Show More</a> -->
+                                                </div>
+                                        </div>
+                                        <!-- Card -->
+                                    </div>
+                                    
+                                </div>
+                           
+                    </div>
+                </div>
+                <!-- Card -->
+            </div>
+        </div>
+        <br/><br/><br/>
+        <!-- Row -->
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-12">
+        <!-- <h4 class="d-inline">Card with Image  code icon</h4> -->
+        <!-- Row -->
+        <br/>
+        <ngx-ui-loader></ngx-ui-loader>
+        <div class="row">
+            <!-- column -->
+            <div class="col-lg-3 col-md-6" *ngFor="let movie of topMovieslist | MovieCustomFilter : { primaryTitle: movieService.topfiltersearch };">
+                <!-- Card -->
+                <div class="card">
+                    <img class="card-img-top" [routerLink]="['/moviedetails']" [queryParams]="{RAW: movie.tconst}" src="{{movie.image}}" style="height:310px; cursor: pointer;" alt="{{movie.primaryTitle}}">
+                    <div class="card-body">
+                        <h4 class="card-title">{{movie.primaryTitle}}</h4>
+                        <!-- <p class="card-text">{{movie.originalTitle}}</p> -->
+                        <a [routerLink]="['/moviedetails']" [queryParams]="{RAW: movie.tconst}" class="btn btn-primary">Show More</a>
+                    </div>
+                </div>
+                <!-- Card -->
+            </div>
+            
+        </div>
+        <br/><br/><br/>
+        <!-- Row -->
+    </div>
+</div>
